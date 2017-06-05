@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.text.NumberFormat;
 
-public class Utilities {
+public class NumberUtility {
 
 	public static String num(double dbl1, String str2) {
 		//Processes PERCENTAGE, CURRENCY
@@ -55,8 +55,8 @@ public class Utilities {
 	
 	public static int num(int int1, int int2) {
 		// Returns Random number between int1 and int2 included.
-		int min = Math.min(int1, int2);
-		int max = Math.max(int1, int2);
+		int min = (int)Math.min(int1, int2);
+		int max = (int)Math.max(int1, int2);
 		Random r = new Random();
 		return r.ints(min, max+1).findFirst().getAsInt();
 	}
