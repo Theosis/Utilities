@@ -59,22 +59,6 @@ public class NumberUtility {
 		return r.ints(min, max+1).findFirst().getAsInt();
 	}
 
-	public static double dmax(double d1, double d2) {
-		if (d1 >= d2) {
-			return d1;
-		} else {
-			return d2;
-		}
-	}
-	
-	public static double dmin(double d1, double d2) {
-		if (d1 <= d2) {
-			return d1;
-		} else {
-			return d2;
-		}
-	}
-	
 	public static void main(String[] args) {
 		// TODO EXPERIMENT TESTING THE UTILITY FUNCTIONS
 		int a = 1;
