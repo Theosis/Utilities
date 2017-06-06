@@ -38,25 +38,23 @@ public class NumberUtility {
 	public static double num(double dbl1,  double dbl2, String str3) {
 		// Returns Min, Max, Rnd between dbl1, dbl2 
 		if (str3.equalsIgnoreCase("MIN")) {
-			return dmax(dbl1, dbl2);
+			return Math.min(dbl1, dbl2);
 		} else if (str3.equalsIgnoreCase("MAX")) {
-			return dmin(dbl1, dbl2);
+			return Math.max(dbl1, dbl2);
 		} else if (str3.equalsIgnoreCase("RND")) {
 			  Random r = new Random();
-			  double max = dmax(dbl1, dbl2);
-			  double min = dmin(dbl1, dbl2);
+			  double max = Math.max(dbl1, dbl2);
+			  double min = Math.min(dbl1, dbl2);
 			  double range = max - min;
 			  double scaled = r.nextDouble() * range;
-			  double shifted = scaled + min;		  
-			  //System.out.println("*** " + shifted.getClass().getName() + " ***");
-			  return shifted;
-		}		
+			  return scaled + min;		  
+		} else return 0;
 	}
 	
 	public static int num(int int1, int int2) {
 		// Returns Random number between int1 and int2 included.
-		int min = (int)Math.min(int1, int2);
-		int max = (int)Math.max(int1, int2);
+		int min = Math.min(int1, int2);
+		int max = Math.max(int1, int2);
 		Random r = new Random();
 		return r.ints(min, max+1).findFirst().getAsInt();
 	}
@@ -88,10 +86,8 @@ public class NumberUtility {
 		System.out.println("Percent w/3 dec digits: " + num(d, "%", 3));
 		System.out.println("Number w/5 dec digits: " + num(d, 5));
 		System.out.println("Random int : " + num(b, a));
-		
+		System.out.println("Random double: " + num(d, c, "RND"));
 		System.out.println("Max: " + num(d, c, "MAX"));
 		System.out.println("Min: " + num(c, d, "MIN"));
-		
-		System.out.println("Random double: " + num(d, c, "RND"));
 	}
 }
